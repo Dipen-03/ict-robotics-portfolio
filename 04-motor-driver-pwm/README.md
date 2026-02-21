@@ -29,7 +29,12 @@ We connected the Raspberry Pi to the Cytron MD13S motor controller using one GPI
 * **BTN_ACCEL:** 16 (Button A)
 * **BTN_DIR:** 17 (Button B)
 
+### Hardware Gallery
+![Wiring Diagram](media/full wiring.jpg)  
+*Fig: Connection diagram between Raspberry Pi, Cytron Driver, and Motor.*
 
+![Physical Setup](media/motor-controller-wiring.jpg)  
+*Fig: Photo of the actual physical wiring and hardware assembly.*
 
 ---
 
