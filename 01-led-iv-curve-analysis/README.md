@@ -34,7 +34,7 @@ We made the LED circuit like this:
 2. The other side of the resistor was connected to Channel A of the M1K.
 3. The short leg of the LED (cathode) was connected to Ground (GND).
 
-![Circuit Setup](media/setup_photo.jpg)
+![Circuit Setup](media/ADALM1000 connected to breadboard with red led light.jpg)
 
 ## Results and Observations
 ### Shape of the I–V Curve
