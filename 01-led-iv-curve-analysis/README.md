@@ -34,7 +34,7 @@ We made the LED circuit like this:
 2. The other side of the resistor was connected to Channel A of the M1K.
 3. The short leg of the LED (cathode) was connected to Ground (GND).
 
-![Circuit Setup](media/ADALM1000 connected to breadboard with red led light.jpg)
+![Circuit Setup](media/setup-side.png)
 
 ## Results and Observations
 ### Shape of the I–V Curve
@@ -62,6 +62,6 @@ Our results showed that the red LED turns on around 1.7–2.0 V, which is exactl
 ## 📂 Project Files
 * [Full Report Document](./docs/FIRST_EXPERIMENT_WITH_BREADBOARD_1.docx)
 * [Data Analysis Excel Sheet](./data/lab1_data.xlsx)
-
+* [pictures](.media)
 ## References
 We took help from AI tools like ChatGPT, our friends, and our teacher for this project.
