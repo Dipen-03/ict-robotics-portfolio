@@ -60,8 +60,8 @@ Our results showed that the red LED turns on around 1.7–2.0 V, which is exactl
 ---
 
 ## 📂 Project Files
-* [Full Report Document](docs/FIRST_EXPERIMENT_WITH_BREADBOARD_1.docx)
-* [Data Analysis Excel Sheet](data/lab1_data.xlsx)
+* [Full Report Document](docs)
+* [Data Analysis Excel Sheet](data)
 * [pictures](media)
 ## References
 We took help from AI tools like ChatGPT, our friends, and our teacher for this project.
