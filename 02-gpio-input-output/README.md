@@ -51,6 +51,6 @@ We learned how to use GPIO pins for both input and output. By using the `pigpio`
 ---
 
 ## 📂 Project Contents
-* **Python Code:** Located in the [/code](./code) folder.
-* **Full Report:** [Download Week 2 Lab PDF](./report/week%202%20lab.pdf)
-* **All Photos:** Located in the [/media](./media) folder.
+* **Python Code:** Located in the [code](./code) folder.
+* **Full Report:** (./report/week-2-report.pdf)
+* **All Photos:** Located in the [media](./media) folder.
