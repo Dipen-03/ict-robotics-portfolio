@@ -1,0 +1,2 @@
+# Python libraries required for Lab 2
+pigpio
