@@ -36,10 +36,10 @@ We connected the Raspberry Pi to the Cytron MD13S motor controller using one GPI
 ## 4. Tasks and Python Code
 Below are the links to the exact code used for each task as documented in the report:
 
-* **[Task 1: Basic PWM Control](./code/task1-basic-pwm.py)** – Sending a constant duty cycle signal to the motor.
-* **[Task 2: Direction Control](./code/task2-direction-control.py)** – Driving the motor forward and backward at different speeds.
-* **[Task 3: Acceleration](./code/task3_motor-acceleration.py)** – Using a loop to slowly increase the duty cycle from 0 to 100%.
-* **[Task 4: Manual Button Control](./code/task4-button-control.py)** – Implementing real-time acceleration and direction switching via buttons.
+* **[Task 1: Basic PWM Control](./codes/task1-basic-pwm.py)** – Sending a constant duty cycle signal to the motor.
+* **[Task 2: Direction Control](./codes/task2-direction-control.py)** – Driving the motor forward and backward at different speeds.
+* **[Task 3: Acceleration](./codes/task3_motor-acceleration.py)** – Using a loop to slowly increase the duty cycle from 0 to 100%.
+* **[Task 4: Manual Button Control](./codes/task4-button-control.py)** – Implementing real-time acceleration and direction switching via buttons.
 
 ---
 
@@ -70,6 +70,6 @@ In this lab, we learned how to control a motor using PWM, a direction pin, and a
 ---
 
 ### 📂 Project Structure
-* **[code/](./code/)**: Contains the `requirements.txt` and all task scripts.
+* **[code/](./codes/)**: Contains the `requirements.txt` and all task scripts.
 * **[media/](./media/)**: Contains images of hardware wiring and terminal logs.
 * **[report/](./report/)**: Contains the full [lab4.pdf](./report/lab4.pdf) document.
