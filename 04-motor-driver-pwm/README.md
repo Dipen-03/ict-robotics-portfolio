@@ -36,10 +36,10 @@ We connected the Raspberry Pi to the Cytron MD13S motor controller using one GPI
 ## 4. Tasks and Python Code
 Below are the links to the exact code used for each task as documented in the report:
 
-* **[Task 1: Basic PWM Control](./code/task1_basic_pwm.py)** – Sending a constant duty cycle signal to the motor.
-* **[Task 2: Direction Control](./code/task2_direction_control.py)** – Driving the motor forward and backward at different speeds.
-* **[Task 3: Acceleration](./code/task3_motor_acceleration.py)** – Using a loop to slowly increase the duty cycle from 0 to 100%.
-* **[Task 4: Manual Button Control](./code/task4_button_control.py)** – Implementing real-time acceleration and direction switching via buttons.
+* **[Task 1: Basic PWM Control](./code/task1-basic-pwm.py)** – Sending a constant duty cycle signal to the motor.
+* **[Task 2: Direction Control](./code/task2-direction-control.py)** – Driving the motor forward and backward at different speeds.
+* **[Task 3: Acceleration](./code/task3_motor-acceleration.py)** – Using a loop to slowly increase the duty cycle from 0 to 100%.
+* **[Task 4: Manual Button Control](./code/task4-button-control.py)** – Implementing real-time acceleration and direction switching via buttons.
 
 ---
 
@@ -48,13 +48,13 @@ Below are the links to the exact code used for each task as documented in the re
 ### Task 3: Terminal Output
 The acceleration loop successfully increased the duty cycle step-by-step from 0.0% to 100.0%.
 
-![Task 3 Terminal Screenshot](media/task3_terminal.jpg)  
+![Task 3 Terminal Screenshot](media/task3-output.jpg)  
 *Fig: Terminal screenshot showing duty cycle increments.*
 
 ### Task 4: Manual Control Output
 We successfully used buttons to change direction and increase speed. The terminal logged direction changes and debouncing events.
 
-![Task 4 Terminal Screenshot](media/task4_terminal.jpg)  
+![Task 4 Terminal Screenshot](media/task4-output.jpg)  
 *Fig: Terminal screenshot showing button-triggered events.*
 
 **Key Observations:**
