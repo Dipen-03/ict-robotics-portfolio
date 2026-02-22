@@ -4,7 +4,7 @@ An IoT-based smart lighting system that automatically controls illumination base
 
 ---
 
-## 📌 Project Overview
+##  Project Overview
 
 This project demonstrates a real-world **automatic lighting system** similar to those used in:
 
@@ -19,17 +19,17 @@ Communication between devices is handled using the **MQTT (Message Queuing Telem
 
 ---
 
-## 🏗 System Architecture
+##  System Architecture
 
 The system consists of two Raspberry Pi nodes:
 
-### 🔹 1. Sensor Node (Publisher)
+###  1. Sensor Node (Publisher)
 - Raspberry Pi Zero 2W
 - Pmod ALS Ambient Light Sensor
 - Reads light intensity using SPI
 - Publishes brightness values (0–1023) via MQTT every second
 
-### 🔹 2. Actuator Node (Subscriber)
+###  2. Actuator Node (Subscriber)
 - Raspberry Pi Zero 2W
 - LED + 220Ω resistor
 - Subscribes to brightness topic
@@ -38,7 +38,7 @@ The system consists of two Raspberry Pi nodes:
 
 ---
 
-## 🔄 How It Works
+##  How It Works
 
 1. The sensor node measures ambient light.
 2. The brightness value is sent to the MQTT broker.
@@ -50,7 +50,7 @@ This mimics real-world dark-activated lighting systems.
 
 ---
 
-## 🧰 Hardware Components
+##  Hardware Components
 
 ### Sensor Node
 - Raspberry Pi Zero 2W  
@@ -67,7 +67,7 @@ This mimics real-world dark-activated lighting systems.
 
 ---
 
-## 🖥 Software Technologies
+##  Software Technologies
 
 - Python  
 - pigpio (SPI communication)  
@@ -76,7 +76,7 @@ This mimics real-world dark-activated lighting systems.
 
 ---
 
-## 📷 Hardware Setup
+##  Hardware Setup
 
 | Sensor Node | Actuator Node |
 |------------|--------------|
@@ -84,10 +84,10 @@ This mimics real-world dark-activated lighting systems.
 
 ---
 
-## 💻 Implementation
+##  Implementation
 
 ### Publisher Script
-`publisher_light_sensor.py`
+* **File:** [`team_1_publisher.py`](./codes/publisher_light_sensor.py)
 
 - Opens SPI channel (1 MHz)
 - Reads 2 bytes from sensor
@@ -95,7 +95,7 @@ This mimics real-world dark-activated lighting systems.
 - Publishes brightness value via MQTT
 
 ### Subscriber Script
-`subscriber_led_control.py`
+* **File:** [`team_2_subscriber.py`](./codes/subscriber_led_control.py)
 
 - Subscribes to MQTT topic
 - Compares brightness with threshold (500)
@@ -103,7 +103,7 @@ This mimics real-world dark-activated lighting systems.
 
 ---
 
-## 📊 Results
+##  Results
 
 The system successfully demonstrated real-time IoT communication.
 
@@ -121,11 +121,32 @@ The communication between nodes was stable and responsive.
 
 ---
 
-## 🎯 Key Learning Outcomes
+##  Key Learning Outcomes
 
 - Understanding MQTT publish–subscribe architecture  
 - Implementing SPI communication on Raspberry Pi  
 - Processing binary sensor data using bit manipulation  
 - Building a real-world IoT sensing and actuation system  
 - Integrating hardware and software in distributed systems  
+
+##  Real-World Application
+This system models a **Smart Street Lighting** application. A single central light sensor can broadcast "night" or "day" status to an entire network of street lights. This allows for automated, energy-efficient control where lamps only consume power when ambient light levels are low.
+
+---
+
+##  Project Contents
+* **Python Scripts:** [codes](./codes)
+* **Full Report:** [Lab6_Final_Report.pdf](./report/Lab6_Final_Report.pdf)
+* **Media Folder:** [/media/](./media) (7 Figures)
+* **Dependencies:** [requirements.txt](./requirements.txt)
+
+---
+
+##  Installation & Setup
+1. **Install MQTT:** `sudo apt install python3-paho-mqtt`
+2. **Start pigpio:** `sudo pigpiod`
+3. **Run Publisher:** `python3 codes/team_1_publisher.py`
+4. **Run Subscriber:** `python3 codes/team_2_subscriber.py`
+
+***
 
