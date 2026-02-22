@@ -1,0 +1,7 @@
+# Lab 5: Ambient Light Sensor (SPI) dependencies
+
+# For SPI communication with Raspberry Pi
+pigpio>=1.78
+
+# Optional: GPIO control library (if needed in other scripts)
+RPi.GPIO>=0.7.0
