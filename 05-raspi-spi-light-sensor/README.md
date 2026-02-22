@@ -67,3 +67,13 @@ We successfully moved from simple GPIO signals to the SPI protocol. This lab tau
 * **Python Code:** Located in the [codes/](./codes) folder.
 * **Full Report:** [Lab5_Final_Report.pdf](./reports/Lab-5.pdf)
 * **All Photos:** Located in the [media/](./media) folder.
+* **Dependencies:** [requirements.txt](./requirements.txt)
+---
+
+## 🛠️ Installation & Setup
+To run the scripts, you need to install the required libraries and configure your Raspberry Pi hardware. Follow these steps:
+
+### 1. Install Dependencies
+Run the following command in your terminal to install the necessary Python libraries listed in `requirements.txt`:
+```bash
+pip install -r requirements.txt
