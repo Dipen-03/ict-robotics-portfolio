@@ -1,0 +1,13 @@
+# MQTT Communication
+paho-mqtt
+
+# Raspberry Pi GPIO Control
+pigpio
+
+# Image and Data Processing
+numpy
+opencv-python
+
+# Note: The Hailo-8L AI libraries (hailo-python-api) 
+# and JSON are usually pre-installed or part of the 
+# standard library.
