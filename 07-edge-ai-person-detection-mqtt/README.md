@@ -1,147 +1,269 @@
-# Raspberry Pi 5 Hailo AI Detection via MQTT  
+#  Raspberry Pi 5 Hailo AI Detection via MQTT  
 ### Lab 7 – Controllers and Electronics  
 
 **Course:** Controllers and Electronics  
-**Laboratory:** Lab 7  
+**Laboratory Work:** Lab 7 – Raspberry Pi 5 Hailo AI Detection via MQTT  
 **Platform:** Raspberry Pi 5 (Hailo AI Kit) & Raspberry Pi Zero 2W  
 **Date:** 15.12.2025  
 
-**Group Members:**  
-- Dipen Gaihre 
+**Group Members:**
+- Dipen Gaihre   
 - Milan Khadka  
 - Udit Bhattarai  
  
 
----
-
-## 1. Project Overview
-
-This laboratory project demonstrates how AI-based person detection running on a Raspberry Pi 5 with a Hailo AI accelerator can transmit detection results using the MQTT protocol to a Raspberry Pi Zero 2W.  
-
-The subscriber device processes the received JSON data and controls LED indicators based on detection confidence and connection status.
-
-The project integrates:
-
-- Edge AI inference  
-- MQTT publish/subscribe communication  
-- JSON data processing  
-- GPIO-based actuator control  
+> This laboratory experiment was carried out by university students as part of a practical lab session.  
+> AI tools were used strictly as writing assistants and to support structured code development during the lab work.
 
 ---
 
-## 2. System Architecture
+#  Project Overview
 
-### MQTT Communication Model
+This project demonstrates how **AI-based person detection** running on a Raspberry Pi 5 with a Hailo AI accelerator can communicate detection results via **MQTT** to an IoT edge device (Raspberry Pi Zero 2W), which then reacts by controlling physical LEDs.
 
-- **Publisher:** Raspberry Pi 5 (Hailo AI pipeline)  
+The system integrates:
+
+- Edge AI inference (Hailo AI accelerator)
+- MQTT publish/subscribe communication
+- JSON data parsing
+- GPIO-based LED control
+- Real-time system response
+
+---
+
+#  Objectives
+
+The main objectives of this laboratory work were:
+
+- To understand MQTT publish/subscribe communication
+- To process AI-generated JSON data
+- To implement real-time IoT response using GPIO
+- To combine AI inference with embedded electronics
+
+Expected outcome:  
+A working real-time system where AI person detection controls LED indicators via MQTT communication.
+
+---
+
+#  System Architecture
+
+## MQTT Communication Model
+
+- **Publisher:** Raspberry Pi 5 + Hailo AI pipeline  
 - **Subscriber:** Raspberry Pi Zero 2W  
-- **Broker IP:** 10.10.200.15  
-- **Topics:**  
-  - `melli/sensor/value`  
-  - `melli/sensor/status`  
+- **Broker IP:** `10.10.200.15`  
+- **Topics Used:**
+  - `melli/sensor/value`
+  - `melli/sensor/status`
+
+### MQTT Architecture Diagram
 
 ![MQTT Architecture](media/mqtt-architecture-diagram.jpg)
 
 ---
 
-## 3. Detection Data Format
+#  Raspberry Pi 5 with Hailo AI Kit
 
-Detection results were transmitted in JSON format:
+The Raspberry Pi 5 was equipped with a **Hailo-8L AI acceleration module**, enabling real-time neural network inference.
+
+Advantages:
+- Real-time AI performance
+- Low power consumption
+- Edge processing (no cloud dependency)
+- High detection accuracy
+
+### Pi 5 with Hailo Setup
+
+![Pi Hailo Setup](media/pi-hailo-setup.jpeg)
+
+---
+
+#  Example Detection Message (JSON)
 
 ```json
 {"label": "person", "confidence": 0.82}
 ```
 
-- `label` → detected object class  
-- `confidence` → probability value (0.0 – 1.0)  
-
-This data was parsed on the subscriber side and used for decision-making logic.
+- `label` → detected object  
+- `confidence` → probability (0.0 – 1.0)
 
 ---
 
-## 4. LED Logic Implementation
+#  Hardware Setup (Raspberry Pi Zero 2W)
 
-The Raspberry Pi Zero 2W controlled four LEDs based on detection results:
+## Components Used
 
-| Condition | LED |
-|------------|------|
-| No person detected | Green |
-| Person detected (confidence ≥ 0.75) | Red |
-| Person detected (confidence < 0.75) | Yellow |
-| MQTT connection lost | Blue |
+- Raspberry Pi Zero 2W
+- Breadboard
+- 4 LEDs (Red, Green, Yellow, Blue)
+- 220–330Ω resistors
+- Jumper wires
 
-### Hardware Setup
+### Wiring Setup
 
-![Pi Zero Setup](media/pi-zero-led-setup.jpg)
+![Pi Zero LED Setup](media/pi-zero-led-setup.jpg)
 
 ### Real Circuit Output
 
-![Circuit Output](media/real-circuit-output.jpg)
+![Real Circuit Output](media/real-circuit-output.jpg)
 
 ---
 
-## 5. Implementation
-
-### Publisher Node  
-Raspberry Pi 5 running Hailo AI pipeline and publishing detection results via MQTT.
-
-### Subscriber Node  
-Raspberry Pi Zero 2W subscribing to MQTT topics, parsing JSON data, and controlling LEDs.
+#  Tasks Performed in Lab 7
 
 ---
 
-## 6. Repository Structure
+#  Task 1 – Understanding MQTT Data
 
-```
-WEEK7/
-│
-├── codes/
-│   ├── ai_node_publisher.py
-│   └── actuator_subscriber.py
-│
-├── media/        # Figures and system outputs
-│
-└── reports/
-    └── Lab7_Final_Report.pdf
-```
+We analyzed the JSON structure sent by the Raspberry Pi 5.
+
+## LED Logic Rules
+
+| Condition | LED |
+|------------|------|
+| No person detected |  Green |
+| Person detected (confidence ≥ 0.75) |  Red |
+| Person detected (confidence < 0.75) |  Yellow |
+| MQTT connection lost |  Blue |
 
 ---
 
-## 7. Results
+#  Task 2 – MQTT Subscriber Implementation
 
-- MQTT communication functioned reliably  
-- JSON parsing was successfully implemented  
-- LED indicators responded correctly to detection confidence  
-- Minor latency was observed due to network delay  
-- System remained stable during laboratory testing  
+We implemented a subscriber using `paho-mqtt` on Raspberry Pi Zero 2W.
+
+### Code  
+[`mqtt-subscriber-task2.py`](codes/mqtt-subscriber-task2.py)
+
+### Code Screenshot
+
+![Task 2 Code](media/mqtt-subscriber-task2.jpg)
+
+### Terminal Output
+
+![Task 2 Output](media/mqtt-subscriber-task2.jpg)
 
 ---
 
-## 8. Real-World Applications
+#  Task 3 – JSON Parsing
 
-This type of Edge AI + IoT architecture can be applied in:
+Incoming MQTT payloads were parsed into Python dictionaries using `json.loads()`.
+
+### Code  
+[`json-parsing-task3.py`](codes/json-parsing-task3.py)
+
+### Code Screenshot
+
+![Task 3 Code](media/json-parsing-task3.jpg)
+
+---
+
+#  Task 4 – LED Indicator Logic
+
+GPIO control was implemented using `pigpio`.
+
+LED control logic was extended to respond dynamically to AI detection confidence values.
+
+### Code Files
+
+- [`led-logic-task4.py`](codes/led-logic-task4.py)
+
+### Code Screenshots
+
+![LED Logic Part 1](media/led-logic-task4-part1.jpg)  
+![LED Logic Part 2](media/led-logic-task4-part2.jpg)
+
+### Terminal Output
+
+![Terminal Output](media/terminal-output-task4.jpg)
+
+---
+
+#  Task 5 – Managing IoT AI Application Quality
+
+We evaluated system quality based on:
+
+- **Accuracy** – Correct person detection  
+- **Reliability** – Stable MQTT communication  
+- **Latency** – Time between detection and LED response  
+- **Robustness** – Performance under different lighting conditions  
+- **Energy Efficiency** – Edge AI optimization  
+
+If performance degrades, improvements include:
+
+- Adjusting confidence threshold  
+- Improving lighting conditions  
+- Optimizing MQTT reconnection logic  
+- Replacing or retraining the AI model  
+
+---
+
+#  Results and Analysis
+
+- MQTT communication worked reliably  
+- JSON parsing was successful  
+- LED logic responded correctly to detection confidence  
+- Minor latency observed (network-related)  
+- No major system crashes occurred  
+
+The system performed as expected during laboratory testing.
+
+---
+
+#  Real-World Applications
+
+This project demonstrates a practical **Edge AI + IoT system**, applicable in:
 
 - Smart security systems  
+- Smart building automation  
 - Occupancy monitoring  
 - Industrial safety detection  
-- Energy-efficient building automation  
-- Privacy-preserving smart camera systems  
+- Energy-saving lighting systems  
+- Smart retail analytics  
 
-Running inference locally on the Raspberry Pi 5 reduces latency and minimizes dependency on cloud services.
+Because inference runs locally on the Raspberry Pi 5 with Hailo AI, the system:
+
+- Reduces latency  
+- Preserves privacy  
+- Minimizes cloud dependency  
+- Improves energy efficiency  
+
+This architecture is highly relevant for modern embedded AI systems.
 
 ---
 
-## 9. Conclusion
+#  Conclusion
 
-This laboratory work demonstrated the integration of AI inference, MQTT communication, and embedded hardware control within a distributed IoT system.
+This laboratory work successfully integrated:
 
-The project strengthened practical understanding of:
+- AI inference (Hailo accelerator)  
+- MQTT communication  
+- JSON data processing  
+- Embedded GPIO control  
 
-- Publish/subscribe communication models  
+Through this experiment, we gained practical experience in:
+
+- Publish/subscribe architectures  
+- Real-time embedded system design  
 - Edge AI deployment  
-- JSON data handling  
-- Real-time embedded system behavior  
+- IoT system debugging and validation  
 
-The system operated as expected and fulfilled all laboratory objectives.
+This project reflects hands-on laboratory work performed by university engineering students in an embedded systems laboratory environment.
+
+---
+
+##  Project Contents
+* **Python Scripts:** [codes](./codes)
+* **Full Report:** [Lab7_Final_Report.pdf](./report/Lab-7-report.pdf)
+* **Media Folder:** [/media/](./media)
+* **Dependencies:** [requirements.txt](./requirements.txt)
+---
+
+#  References
+
+- Controllers and Electronics – Lab 7 Instructions  
+- HAMK – A Good Lab Report Guidelines  
+- MQTT Documentation  
+- Hailo AI Documentation  
 
 ---
