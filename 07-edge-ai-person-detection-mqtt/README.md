@@ -254,7 +254,7 @@ This project reflects hands-on laboratory work performed by university engineeri
 
 ##  Project Contents
 * **Python Scripts:** [codes](./codes)
-* **Full Report:** [Lab7_Final_Report.pdf](./report/Lab-7-report.pdf)
+* **Full Report:** [Lab7_Final_Report.pdf](./report/lab-7-report.pdf)
 * **Media Folder:** [/media/](./media)
 * **Dependencies:** [requirements.txt](./requirements.txt)
 ---
