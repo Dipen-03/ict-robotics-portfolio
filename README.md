@@ -53,17 +53,16 @@ To explore any project in this repository:
 
 1.  **Clone the Repository:**
     ```bash
-    ```bash
-       git clone [https://github.com/Dipen-03/ict-robotics-portfolio.git](https://github.com/Dipen-03/ict-robotics-portfolio.git)
+    git clone [https://github.com/Dipen-03/ict-robotics-portfolio.git](https://github.com/Dipen-03/ict-robotics-portfolio.git)
        cd ict-robotics-portfolio
     ```
 2.  **Install Requirements:**
     ```bash
-        pip install -r requirements.txt
+    pip install -r requirements.txt
     ```
 3.  **Start Services:**
     ```bash
-        udo pigpiod
+    udo pigpiod
     ```
 
 ---
