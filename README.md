@@ -53,8 +53,8 @@ To explore any project in this repository:
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/Dipen-03/ict-robotics-portfolio.git](https://github.com/Dipen-03/ict-robotics-portfolio.git)
-       cd ict-robotics-portfolio
+    git clone https://github.com/Dipen-03/ict-robotics-portfolio.git
+    cd ict-robotics-portfolio
     ```
 2.  **Install Requirements:**
     ```bash
@@ -72,7 +72,7 @@ I am passionate about how robotics can solve real-world problems. As a 2nd-year 
 
 * **Institution:** HAMK University of Applied Sciences, Riihimäki 🇫🇮
 * **Degree:** ICT and Robotics (Bachelor of Engineering)
-* **Connect:** [[LinkedIn Profile Link](https://www.linkedin.com/in/dipen-gaihre-a90297214/)
+* **Connect:** [LinkedIn Profile Link](https://www.linkedin.com/in/dipen-gaihre-a90297214/)
 
 ---
 *This portfolio is maintained as a live document of my technical development.*
