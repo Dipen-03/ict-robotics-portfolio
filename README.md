@@ -18,7 +18,7 @@ This portfolio showcases a series of technical challenges designed to bridge the
 
 ##  Main Project Highlights
 
-### [Lab 7: AI-Integrated Security System (Capstone)](./Lab7/)
+### [Lab 7: AI-Integrated Security System (Capstone)](./07-edge-ai-person-detection-mqtt/)
 The most advanced project of my second year involved integrating Edge AI with a distributed IoT network. Working alongside Milan Khadka and Udit Bhattarai, I developed a system that uses computer vision to solve the issue of false alarms in security.
 
 * **How it Works:** A Raspberry Pi 5 performs real-time person detection. Results are packaged into **JSON** strings (label + confidence) and sent via **MQTT** to a Raspberry Pi Zero 2W.
@@ -27,7 +27,7 @@ The most advanced project of my second year involved integrating Edge AI with a 
 
 
 
-### [Lab 6: Distributed IoT Communication](./Lab6/)
+### [Lab 6: Distributed IoT Communication](./06-iot-smart-light-control-mqtt/)
 Before adding AI, I focused on the "Internet" part of IoT. This lab involved two Raspberry Pis communicating over a local network to share light intensity data using a publish-subscribe model.
 * **Key Feature:** M2M (Machine-to-Machine) communication using an MQTT broker to bridge sensor data and remote actuators.
 
@@ -37,11 +37,11 @@ Before adding AI, I focused on the "Internet" part of IoT. This lab involved two
 
 While the AI projects are the highlights, they are built on the foundations I mastered in the following labs:
 
-* **[Lab 5: SPI & Bit Manipulation](./Lab5/)** – Reading raw data from a Pmod ALS light sensor using high-speed serial communication.
-* **[Lab 4: Digital Sensors (I2C)](./Lab4/)** – Implementing master-slave communication to monitor climate and environmental data.
-* **[Lab 3: PWM & Motion Control](./Lab3/)** – Using Pulse Width Modulation to precisely control DC motor speed and LED brightness.
-* **[Lab 2: Signal Conversion (ADC)](./Lab2/)** – Interfacing an **MCP3008 ADC** to allow the Raspberry Pi to interpret analog signals from the physical world.
-* **[Lab 1: Foundations of GPIO](./Lab1/)** – Introduction to hardware-software synchronization and circuit safety.
+* **[Lab 5: SPI & Bit Manipulation](./05-raspi-spi-light-sensor/)** – Reading raw data from a Pmod ALS light sensor using high-speed serial communication.
+* **[Lab 4: Digital Sensors (I2C)](./04-motor-driver-pwm/)** – Implementing master-slave communication to monitor climate and environmental data.
+* **[Lab 3: PWM & Motion Control](./03-raspi-motor-mosfet-control/)** – Using Pulse Width Modulation to precisely control DC motor speed and LED brightness.
+* **[Lab 2: Signal Conversion (ADC)](./02-gpio-input-output/)** – Interfacing an **MCP3008 ADC** to allow the Raspberry Pi to interpret analog signals from the physical world.
+* **[Lab 1: Foundations of GPIO](./01-led-iv-curve-analysis/)** – Introduction to hardware-software synchronization and circuit safety.
 
 
 
@@ -54,16 +54,16 @@ To explore any project in this repository:
 1.  **Clone the Repository:**
     ```bash
     ```bash
-   git clone [https://github.com/Dipen-03/ict-robotics-portfolio.git](https://github.com/Dipen-03/ict-robotics-portfolio.git)
-   cd ict-robotics-portfolio
+       git clone [https://github.com/Dipen-03/ict-robotics-portfolio.git](https://github.com/Dipen-03/ict-robotics-portfolio.git)
+       cd ict-robotics-portfolio
     ```
 2.  **Install Requirements:**
     ```bash
-    pip install -r requirements.txt
+        pip install -r requirements.txt
     ```
 3.  **Start Services:**
     ```bash
-    sudo pigpiod
+        udo pigpiod
     ```
 
 ---
