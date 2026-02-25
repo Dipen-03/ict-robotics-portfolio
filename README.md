@@ -62,7 +62,7 @@ To explore any project in this repository:
     ```
 3.  **Start Services:**
     ```bash
-    udo pigpiod
+    sudo pigpiod
     ```
 
 ---
